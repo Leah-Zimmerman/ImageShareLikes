@@ -1,0 +1,29 @@
+﻿@*@model ViewImageViewModel*@
+@model Image
+@using ImageShareLikesEF.Data;
+
+<div class="row" data-id="@Model.Id">
+@*    <div class="col-md-8 offset-md-2 bg-light p-4 shadow">
+        <h3>@Model.Image.Title</h3>
+        <img src="/uploads/@Model.Image.FileName" class="w-100" />
+        <div>
+            @if(Model.Disable)
+            {
+                <form method="post" action="/home/addtosession?id=@Model.Image.Id">
+                    <button data-image-id="@Model.Image.Id" disabled class="btn btn-primary likebutton">Like</button>
+                </form>
+            }
+            else
+            {
+                <form method="post" action="/home/addtosession?id=@Model.Image.Id">
+                    <button data-image-id="@Model.Image.Id" class="btn btn-primary likebutton">Like</button>
+                </form>
+            }
+            <h5>Current Likes: @Model.Image.Views</h5>
+        </div>
+    </div>*@
+</div>
+
+@section scripts{
+    <script src="\js\viewimage.js"></script>
+}
